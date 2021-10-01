@@ -1,0 +1,20 @@
+# permissions for end users to view mapreduces.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: mapreduce-viewer-role
+rules:
+- apiGroups:
+  - cache.k69s.io
+  resources:
+  - mapreduces
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - cache.k69s.io
+  resources:
+  - mapreduces/status
+  verbs:
+  - get
